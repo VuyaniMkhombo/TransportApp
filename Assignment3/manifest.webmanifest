@@ -1,0 +1,18 @@
+{
+    "short_name": "Vaya App",
+    "name": "Asivayeni App",
+    "icons": [
+      {
+        "src": "images/Train.jpeg",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+      
+    ],
+    "start_url": "index.html",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/Transport/",
+    "theme_color": "#3367D6"
+  }
+  

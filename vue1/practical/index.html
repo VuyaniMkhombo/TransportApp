@@ -5,7 +5,22 @@
   </head>
   <body>
     <div id="app">
-      
+      <form v-on:submit.prevent>
+        <div>
+          <div> <label>Guess a number</label></div>
+
+          <div>
+            <input  v-model="estimate">
+          </div>
+
+        </div>
+
+        <div>
+          
+            <button v-on:click="showAlert">submit</button>
+        
+        </div>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>

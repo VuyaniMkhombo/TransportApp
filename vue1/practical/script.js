@@ -18,4 +18,4 @@ var app = new Vue({
 
 app.guess = Math.round(Math.random() * 10)
 
-console.log(app.guess)<button v-on:click="showAlert">submit</button>
+console.log(app.guess)

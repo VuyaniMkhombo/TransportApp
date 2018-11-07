@@ -8,6 +8,8 @@ var app = new Vue({
         showAlert: function () {
             if(app.guess == app.estimate){
                 alert('Your guess is correct ')
+            }else{
+                alert('Sorry Wrong Guess Try Again!')
             }
           
         }
@@ -16,4 +18,4 @@ var app = new Vue({
 
 app.guess = Math.round(Math.random() * 10)
 
-console.log(app.guess)
+console.log(app.guess)<button v-on:click="showAlert">submit</button>

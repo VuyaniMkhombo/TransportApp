@@ -43,6 +43,11 @@
     "type": "image/png"
 },
 {
+  "src": "icons/map.png",
+  "size": "200x200",
+  "type": "image/png"
+},
+{
     "src": "icons/menu.png",
     "size": "225x225",
     "type": "image/png"

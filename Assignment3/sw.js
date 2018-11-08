@@ -16,6 +16,7 @@ var filesToCache = [
   '/TransportApp/Assignment3/icons/favourites.png',
   '/TransportApp/Assignment3/icons/home.png',
   '/TransportApp/Assignment3/icons/loading.png',
+  '/TransportApp/Assignment3/icons/map.png',
   '/TransportApp/Assignment3/icons/menu.png',
   '/TransportApp/Assignment3/icons/taxi.jpeg',
   '/TransportApp/Assignment3/icons/train.png',

@@ -1,4 +1,4 @@
-self.importScripts('main.js');
+//self.importScripts('main.js');
 
 // Files to cache
 var cacheName = 'Assignment3';
@@ -8,7 +8,18 @@ var filesToCache = [
   '/TransportApp/Assignment3/bulma.mini.css',
   '/TransportApp/Assignment3/images/',
   '/TransportApp/Assignment3/images/Train.jpeg',
-  '/TransportApp/Assignment3/icons/'
+  '/TransportApp/Assignment3/icons/',
+  '/TransportApp/Assignment3/icons/back.png',
+  '/TransportApp/Assignment3/icons/blo.png',
+  '/TransportApp/Assignment3/icons/bus.png',
+  '/TransportApp/Assignment3/icons/car.jpeg',
+  '/TransportApp/Assignment3/icons/favourites.png',
+  '/TransportApp/Assignment3/icons/home.png',
+  '/TransportApp/Assignment3/icons/loading.png',
+  '/TransportApp/Assignment3/icons/menu.png',
+  '/TransportApp/Assignment3/icons/taxi.jpeg',
+  '/TransportApp/Assignment3/icons/train.png',
+  '/TransportApp/Assignment3/icons/work.png',
 ];
 
 // Installing Service Worker

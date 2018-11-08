@@ -7,12 +7,66 @@
         "type": "image/png",
         "sizes": "192x192"
       }
+      {
+        "src": "icons/back.png",
+        "size": "200x200",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/blo.png",
+        "size": "225x225",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/bus.png",
+        "size": "225x225",
+        "type": "image/png"
+    },
+    {
+      "src": "icons/car.png",
+      "size": "200x200",
+      "type": "image/png"
+  },
+  {
+      "src": "icons/favourites.png",
+      "size": "225x225",
+      "type": "image/png"
+  },
+  {
+      "src": "icons/home.png",
+      "size": "225x225",
+      "type": "image/png"
+  },
+  {
+    "src": "icons/loading.png",
+    "size": "200x200",
+    "type": "image/png"
+},
+{
+    "src": "icons/menu.png",
+    "size": "225x225",
+    "type": "image/png"
+},
+{
+    "src": "icons/taxi.png",
+    "size": "225x225",
+    "type": "image/png"
+},
+{
+  "src": "icons/train.png",
+  "size": "200x200",
+  "type": "image/png"
+},
+{
+  "src": "icons/work.png",
+  "size": "225x225",
+  "type": "image/png"
+}
       
     ],
-    "start_url": "index.html",
-    "background_color": "#3367D6",
-    "display": "standalone",
-    "scope": "/Transport/",
-    "theme_color": "#3367D6"
+    "start_url": "/TransportApp/Assignment_3/index.html",
+    "display": "fullscreen",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34"
   }
   

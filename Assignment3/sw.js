@@ -6,7 +6,9 @@ var filesToCache = [
   '/TransportApp/Assignment3/index.html',
   '/TransportApp/Assignment3/main.js',
   '/TransportApp/Assignment3/bulma.mini.css',
+  '/TransportApp/Assignment3/images/',
   '/TransportApp/Assignment3/images/Train.jpeg',
+  '/TransportApp/Assignment3/icons/'
 ];
 
 // Installing Service Worker

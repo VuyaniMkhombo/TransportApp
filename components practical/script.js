@@ -5,17 +5,30 @@ function generateGuess(){
 const app = new Vue({
   el: "#app",
   data: {
-    timer: 60,
+    timer: 10,
     computerGuess: generateGuess(),
     userGues:0,
-    errors: [ true, true]
+    errors: [ ],
+    showModal:false,
+    failure: false,
+    success: false,
+    customMessage: ''
   },
   methods: {
     enter: function(){
       if(app.computerGuess == app.userGues){
         alert('Your guess is correct ')
+        this.computerGuess = generateGuess()
+        console.log(app.computerGuess)
       }else{
-        alert('Sorry Wrong Guess Try Again!')
+        this.errors.push(true)
+        if(this.errors.length >= 3){
+          alert('You failed' + ''+this.computerGuess)
+          this.timer = 10
+          this.errors = []
+          this.computerGuess = generateGuess()
+          console.log(app.computerGuess)
+        }
       }
     }
   }
@@ -24,8 +37,11 @@ const app = new Vue({
 function countDown() {
   app.timer--
   if(app.timer ===0){
-    alert('You failed!')
-    app.timer = 60
+    app.showModal = true
+    app.failure = true
+    app.success = false
+    app.timer = 10
+    app.customMessage = 'the correct values was ' + app.computerGuess
   }
 }
 

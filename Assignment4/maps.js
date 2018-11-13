@@ -2,6 +2,12 @@ window.onload = function(){
     loadMap();
 }
 
+function searchLocation(){
+    var geo = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken
+    })
+}
+
 //Load map function
 function loadMap(){
     //window.location.href = "searchTrain.html";
@@ -12,10 +18,9 @@ function loadMap(){
         center: [18.4241, -33.9249], // starting position [lng, lat]
         zoom: 9 // starting zoom
     });
-
+    
     window.startPin = new mapboxgl.Marker({draggable : true}).setLngLat([0, 0]).addTo(window.map)
     window.destinationPin = new mapboxgl.Marker({draggable : true}).setLngLat([0, 0]).addTo(window.map)
-
     window.map.on('click', function(event){
         event.preventDefault();
         if(window.startPoint == true){
@@ -29,3 +34,4 @@ function loadMap(){
         }
     })
 }
+document.getElementById('map').appendChild(geocoder.onAdd(map));

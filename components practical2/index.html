@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" >
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
     </head>
     <body>
         <div class="section" id="app">
@@ -15,11 +16,14 @@
                 <div class="field">
                     <label class="label">password</label>
                     <input class="input" type="password" id="password" v-model="password"v-bind:class="{ 'is-danger': passwordError}">
-                    <div class="has-text-danger" v-if="passwordError == true">The was an issue with your password</div>
+                   <!-- <div class="has-text-danger" v-if="passwordError == true">The was an issue with your password</div> -->
+                   <ul>
+                       <li v-for="error in usernameError">{{error}}</li>
+                   </ul>
                 </div>
 
                 <div class="field">
-                    <button class="button" type="submit" v-on:click="login">Login</button>
+                    <button class="button" id="btn-login" type="submit" v-on:click="login">Login</button>
                 </div>
             </form>
         </div>

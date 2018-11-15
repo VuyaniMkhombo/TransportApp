@@ -1,5 +1,5 @@
-const appId = 'BqU0U8dHPxCCYD9lLONy'
-const appCode = 'sEcZjhBTHp46SlRzts1ZMQ'
+const appId = 'UQC0GZBe4uhDMrPh37kB'
+const appCode = 'skrJjuMNRtDPm5YFPW9P4w'
 
 const autocompleteUrl = "http://autocomplete.geocoder.api.here.com/6.2/suggest.json" +
   "?app_id=" + appId +

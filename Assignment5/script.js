@@ -22,26 +22,40 @@ var app = new Vue({
     data: {
         startAddress: '',
         destinationAddress: '',
+        startLocation: undefined,
+        destinationLocation: undefined,
+        isStart: true,
         autoCompleteResults: [],
         startPoint: undefined,
         destinationPoint: undefined
     },
     methods: {
-        autocomplete: function () {
+        autocomplete: function (isStart) {
             var _this = this
-            if(this.startAddress.length < 4) {
+            var text = this.startAddress
+
+            if (isStart == false) {
+                text = this.destinationAddress
+            }
+
+            console.log(text);
+
+            if(text.length < 5) {
                 return false
             }
 
-            fetch(autocompleteUrl + this.startAddress)
+            fetch(autocompleteUrl + text)
                 .then(function (response) {
                     return response.json()
                 })
                 .then(function (response) {
                     _this.autoCompleteResults = response.suggestions
+                    _this.isStart = isStart
+                })
+                .catch(error => {
+                  console.log(error);
                 })
         },
-
         resultSelect: function (result) {
             var _this = this
             fetch(geocodeUrl + result.label)
@@ -50,37 +64,21 @@ var app = new Vue({
                 })
                 .then(function (response) {
                     var location = response.Response.View[0].Result[0].Location.DisplayPosition
-                    _this.startPoint = L.marker([location.Latitude, location.Longitude]).addTo(map)
-                    _this.autoCompleteResults = []                    
+                    if(_this.isStart == true) {
+                        _this.startPoint = L.marker([location.Latitude, location.Longitude])
+                        _this.startPoint.addTo(map)
+                        _this.startLocation = location
+                        _this.autoCompleteResults = []
+                    } else {
+                        _this.destinationPoint = L.marker([location.Latitude, location.Longitude])
+                        _this.destinationPoint.addTo(map)
+                        _this.destinationLocation = location
+                        _this.autoCompleteResults = []
+                    }
                 })
         },
-
-        autocomplete1: function () {
-            var _this = this
-            if(this.destinationAddress.length < 4) {
-                return false
-            }
-
-            fetch(autocompleteUrl + this.destinationAddress)
-                .then(function (response) {
-                    return response.json()
-                })
-                .then(function (response) {
-                    _this.autoCompleteResults = response.suggestions
-                })
-        },
-
-        resultSelect1: function (result) {
-            var _this = this
-            fetch(geocodeUrl + result.label)
-                .then(function (response) {
-                    return response.json()
-                })
-                .then(function (response) {
-                    var location = response.Response.View[0].Result[0].Location.DisplayPosition
-                    _this.destinationPoint = L.marker([location.Latitude, location.Longitude]).addTo(map)
-                    _this.autoCompleteResults = []                    
-                })
+        search: function () {
+            // will connect to the whereismytransport api and get some results and do things with it.
         }
     }
 })
